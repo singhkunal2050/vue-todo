@@ -32,7 +32,7 @@ export default {
             })
         },
         addTodo(newTodo){
-            console.log({newTodo})
+            this.todos = [...this.todos , newTodo]
         }
 
     },
