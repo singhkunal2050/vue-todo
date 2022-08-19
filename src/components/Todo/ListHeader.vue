@@ -1,11 +1,23 @@
 <script>
-  
+import { def } from '@vue/shared';
+import AddTodo from './AddTodo.vue'
+  export default {
+    props : {
+        name:String
+    },
+    components : {
+        AddTodo       
+    }
+  }
 </script>
 
 <template>
 
     <section class="header-wrapper">
-         Header 
+        <div class="py-4 px-2 bg-slate-200 flex gap-4 flex-col items-center">
+             <h2 class="text-xl font-bold">{{name}}</h2>
+             <AddTodo />
+        </div> 
     </section>
 
 </template>
