@@ -1,6 +1,6 @@
 <template>
-    <div class=" py-4 px-2 bg-white mx-1 my-2 shadow-lg" :key="todo.key" v-for="todo in todos">
-        <TodoItem :title= "todo.title" :done="todo.completed" :id="todo.id"/>
+    <div class="" :key="todo.key" v-for="todo in todos">
+        <TodoItem :title="todo.title" :completed="todo.completed" :id="todo.id" :highlight="todo.highlight" @delete-todo="$emit('delete-todo',todo.id)" @toggle-highlight="$emit('toggle-highlight',todo.id)" @toggle-complete="$emit('toggle-complete',todo.id)" />
     </div>
 </template>
 <script>
@@ -9,7 +9,8 @@ export default {
     components: { TodoItem },
     props:{
         todos:Array
-    }
+    },
+    emits:['delete-todo','toggle-highlight','toggle-complete']
 }
 </script>
 <style >
