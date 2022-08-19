@@ -1,8 +1,8 @@
 <template lang="">
-    <div class="p-2 bg-purple-100" :data-task-id="id">
-        <p> {{title}}</p>
-        <span>{{done ? "Completed" : "Incomplete"}}</span>
-    </div>
+        <article :data-todo-id="id">
+            <p> {{title}}</p>
+            <span>{{done ? "Completed" : "Incomplete"}}</span>
+        </article>
 </template>
 <script>
 export default {

@@ -1,6 +1,6 @@
 <template>
-    <div class=" py-4 px-2">
-        <TodoItem title= "Wash Dishes" :done="false" id="32r3r3"/>
+    <div class=" py-4 px-2 bg-white mx-1 my-2 shadow-lg" :key="todo.key" v-for="todo in todos">
+        <TodoItem :title= "todo.title" :done="todo.completed" :id="todo.id"/>
     </div>
 </template>
 <script>
@@ -8,7 +8,7 @@ import TodoItem from './TodoItem.vue';
 export default {
     components: { TodoItem },
     props:{
-        tasks:Array[Object]
+        todos:Array
     }
 }
 </script>
