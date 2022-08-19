@@ -4,7 +4,9 @@
 </script>
 
 <template>
-  <Todo/>
+  <section class="m-2">
+    <Todo/>
+  </section>
 </template>
 
 <style scoped>

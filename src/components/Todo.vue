@@ -33,7 +33,7 @@ export default {
 </script>
 
 <template>
-    <div class="todo max-w-4xl mx-auto my-8  bg-[#f5f5f5] min-h-[80vh] outline outline-1 outline-gray-200 shadow-lg">
+    <div class="todo max-w-4xl mx-auto my-8 bg-[#f5f5f5] min-h-[80vh] outline outline-1 outline-gray-200 shadow-lg">
         <ListHeader name="VueTodo" />
         <List :todos="todos" />
     </div>
