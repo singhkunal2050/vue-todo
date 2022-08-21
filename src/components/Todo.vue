@@ -9,7 +9,7 @@ export default {
         List
     },
     data() {
-        return { todos: [] }
+        return { todos: [] , showFooter : false }
     },
     methods:{
         deleteTodo(id){
@@ -33,6 +33,9 @@ export default {
         },
         addTodo(newTodo){
             this.todos = [...this.todos , newTodo]
+        },
+        toggleContent(){
+            this.showFooter=!this.showFooter;
         }
 
     },
@@ -66,6 +69,10 @@ export default {
         <List @delete-todo="deleteTodo" @toggle-highlight="toggleHighlight" @toggle-complete="toggleComplete" :todos="todos" />
         <div class="info mt-auto p-2 text-center ">
             <p class="text-gray-700 text-xs"> Double Click Todo to highlight</p>
+            <button @click="toggleContent"> {{showFooter ? 'Hide' : 'Show more'}} </button>
+            <footer v-if="showFooter" class="pt-2">
+                <p class="text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam enim, accusamus totam veritatis obcaecati est commodi, iusto esse repudiandae tempore, aliquam vel? Sit praesentium architecto ut veritatis delectus, hic et.</p>
+            </footer>
         </div>
    </div>
     
