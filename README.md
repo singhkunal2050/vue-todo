@@ -18,8 +18,7 @@ Hosted on Vercel and Backend on Glitch
 
 - JSON Server
     https://dummy-json-server.glitch.me/todos
-
-Accepts : GET,POST,UPDATE,PUT,DELETE
+    Accepts : GET,POST,UPDATE,PUT,DELETE
 
 - Backend Code
     https://glitch.com/edit/#!/dummy-json-server
