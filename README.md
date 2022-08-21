@@ -11,13 +11,20 @@ Hosted on Vercel and Backend on Glitch
 
 ## Setup Project Locally
 
-```js
-    git clone 'https://github.com/singhkunal2050/vue-todo.git'
-    npm install
-    npm run backend
-    npm run dev
+1. Install and Setup 
 
-```
+    ```js
+        git clone 'https://github.com/singhkunal2050/vue-todo.git'
+        npm install
+        npm run backend
+        npm run dev
+
+    ```
+
+2. Change Backend API URL to Local `https://dummy-json-server.glitch.me/todos` to `http://localhost:5000/todos` 
+
+
+## Info
 
 - Client URL
     https://vue-todos-demo.vercel.app/
