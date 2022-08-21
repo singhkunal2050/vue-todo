@@ -6,6 +6,8 @@
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 
+![Snap](./public/snap.png)
+
 Vue , Vitejs , TailwindCSS, JSON-server
 Hosted on Vercel and Backend on Glitch
 
