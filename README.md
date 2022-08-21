@@ -3,7 +3,7 @@
 ## Setup Project
 
 ```js
-    git clone 'project-git-link'
+    git clone 'https://github.com/singhkunal2050/vue-todo.git'
     npm install
     npm run backend
     npm run dev
