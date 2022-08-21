@@ -3,7 +3,7 @@
         <form @submit="addTodo" class="flex flex-col justify-start w-full px-4">
             <input v-model="text" type="text" placeholder="Add Task here..." name="todo-text" id="todo-text"
                 class="flex-1 p-2 w-full focus-visible:outline-gray-300" />
-            <input v-model="date" type="date" name="todo-date" id="todo-date"
+            <input v-model="date" type="date" placeholder="Select Date" name="todo-date" id="todo-date"
                 class="flex-1 p-2 w-full focus-visible:outline-gray-300" />
             <label for="todo-highlight" class="flex gap-2 py-2 accent-black focus-visible:outline-gray-300">
                 <span> Highlight </span>
