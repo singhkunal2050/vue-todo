@@ -13,7 +13,7 @@ export default {
     },
     methods:{
         async deleteTodo(id){
-            let response = await fetch(`http://localhost:5000/todos/${id}` , {
+            let response = await fetch(`https://dummy-json-server.glitch.me/todos/${id}` , {
                 method:'DELETE',
                 headers : {
                     'Content-type' : 'application/json',
@@ -29,7 +29,7 @@ export default {
             let todoToUpdate = await this.fetchTodo(id); 
             const updatedTodo = {...todoToUpdate , highlight:!todoToUpdate.highlight};
 
-            let response = await fetch(`http://localhost:5000/todos/${id}` , {
+            let response = await fetch(`https://dummy-json-server.glitch.me/todos/${id}` , {
                 method:'PUT',
                 headers : {
                     'Content-type' : 'application/json',
@@ -48,7 +48,7 @@ export default {
             let todoToUpdate = await this.fetchTodo(id); 
             const updatedTodo = {...todoToUpdate , completed:!todoToUpdate.completed};
 
-            let response = await fetch(`http://localhost:5000/todos/${id}` , {
+            let response = await fetch(`https://dummy-json-server.glitch.me/todos/${id}` , {
                 method:'PUT',
                 headers : {
                     'Content-type' : 'application/json',
@@ -64,7 +64,7 @@ export default {
             })
         },
         async addTodo(newTodo){
-            let response = await fetch('http://localhost:5000/todos' , {
+            let response = await fetch('https://dummy-json-server.glitch.me/todos' , {
                 method:'POST',
                 headers : {
                     'Content-type' : 'application/json',
@@ -79,12 +79,12 @@ export default {
             this.showFooter=!this.showFooter;
         },
         async fetchTodos(){
-            let response = await fetch('http://localhost:5000/todos');
+            let response = await fetch('https://dummy-json-server.glitch.me/todos');
             let data = await response.json();
             return data;
         },
          async fetchTodo(id){
-            let response = await fetch(`http://localhost:5000/todos/${id}`);
+            let response = await fetch(`https://dummy-json-server.glitch.me/todos/${id}`);
             let data = await response.json();
             console.log(data);
             return data;
