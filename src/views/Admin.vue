@@ -1,11 +1,10 @@
 <template>
-    <div class="py-4 px-2 bg-slate-200 flex gap-4 flex-col items-center">
-       <h2 class="text-xl font-bold">Welcome Admin</h2>
-    </div>
-    <UsersList :todoGroups="todoGroups" />
+    <Login v-if="!isLoggedIn" :isLoggedIn="isLoggedIn" @logged-in="logAdminIn"/>
+    <UsersList v-if="isLoggedIn" :todoGroups="todoGroups" />
 </template>
 <script>
     import UsersList from '../components/Admin/UsersList.vue';
+    import Login from '../components/Admin/Login.vue';
     let BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
     export default {
@@ -14,11 +13,12 @@
                 loaded:false,
                 users : [],
                 allTodos : [],
-                todoGroups: {}
+                todoGroups: {},
+                isLoggedIn:localStorage.isLoggedIn ? true : false
             }
         },
         components:{
-            UsersList
+            UsersList,Login
         },
         methods:{
              async fetchAllTodos() {
@@ -39,6 +39,9 @@
                 },{})
                 // console.log(this.todoGroups)
             },
+            logAdminIn(e){
+                localStorage.isLoggedIn = this.isLoggedIn = true
+            }
         },
         async created(){
                 this.allTodos = await this.fetchAllTodos();
