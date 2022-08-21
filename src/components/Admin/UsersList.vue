@@ -1,7 +1,8 @@
 <template>
 
-    <div class="py-4 px-2 bg-slate-200 flex gap-4 flex-col items-center">
+    <div class="py-4 px-6 bg-slate-200 flex gap-4 justify-between ">
        <h2 class="text-xl font-bold">Welcome Admin</h2>
+       <button @click="$emit('log-out',e)" class="text-emerald-500 font-bold">Logout</button>
     </div>
 
     <section class="flex " >
@@ -42,6 +43,7 @@ export default {
     props: {
         todoGroups: Object
     },
+    emits:['log-out']
 }
 
 </script>

@@ -8,17 +8,16 @@
             <div class="flex flex-col space-y-5">
                 <label for="email">
                     <p class="font-medium text-slate-700 pb-2">Email address</p>
-                    <input id="email" name="email" type="email"
+                    <input v-model="email" id="email" name="email" type="email"
                         class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                         placeholder="Enter email address">
                 </label>
                 <label for="password">
                     <p class="font-medium text-slate-700 pb-2">Password</p>
-                    <input id="password" name="password" type="password"
+                    <input v-model="password" id="password" name="password" type="password"
                         class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                         placeholder="Enter your password">
                 </label>
-           
                 <button
                     class="w-full py-3 font-medium text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg border-emerald-500 hover:shadow inline-flex space-x-2 items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -34,17 +33,34 @@
 
 </template>
 <script>
-    export default {
-        props:{
-            isLoggedIn:Boolean
-        },
-        methods:{
-            handleSubmit(e){
-                e.preventDefault();
-                console.log(this.isLoggedIn)
-                this.$emit('logged-in',e)
+export default {
+    props: {
+        isLoggedIn: Boolean
+    },
+    data() {
+        return {
+            email: '',
+            password: ''
+        }
+    },
+    methods: {
+        handleSubmit(e) {
+            e.preventDefault();
+            console.log(this.isLoggedIn)
+            if (!this.email || !this.password) {
+                alert('Add Data Please!')
+                return
             }
-        },
-    }
+            if(this.password=='admin'){
+                this.$emit('logged-in', e)
+            }
+            else{
+                alert('Incorrect Password!')
+            }
+            this.email = '';
+            this.password = '';
+        }
+    },
+}
 
 </script>

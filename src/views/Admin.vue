@@ -1,6 +1,6 @@
 <template>
     <Login v-if="!isLoggedIn" :isLoggedIn="isLoggedIn" @logged-in="logAdminIn"/>
-    <UsersList v-if="isLoggedIn" :todoGroups="todoGroups" />
+    <UsersList v-if="isLoggedIn" :todoGroups="todoGroups" @log-out="logAdminOut" />
 </template>
 <script>
     import UsersList from '../components/Admin/UsersList.vue';
@@ -40,7 +40,11 @@
                 // console.log(this.todoGroups)
             },
             logAdminIn(e){
-                localStorage.isLoggedIn = this.isLoggedIn = true
+                localStorage.isLoggedIn = this.isLoggedIn = true;
+            },
+            logAdminOut(e){
+                delete localStorage.isLoggedIn; 
+                this.isLoggedIn = false;
             }
         },
         async created(){
