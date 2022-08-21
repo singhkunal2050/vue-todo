@@ -36,28 +36,17 @@ export default {
         },
         toggleContent(){
             this.showFooter=!this.showFooter;
+        },
+        async fetchTodos(){
+            let response = await fetch('http://localhost:5000/todos');
+            let data = await response.json();
+            console.log(data);
+            return data;
         }
 
     },
-    created() {
-        this.todos = [
-            {
-                id: '2323fa',
-                title: 'Goto Market',
-                completed: false,
-                highlight:true,
-            }, {
-                id: '3323fa',
-                title: 'Read articles',
-                completed: true,
-                highlight:false,
-            }, {
-                id: '3c23fa',
-                title: 'Cook Dinner',
-                completed: false,
-                highlight:false,
-            },
-        ]
+    async created() {
+        this.todos = await this.fetchTodos();
     }
 }
 

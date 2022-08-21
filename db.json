@@ -11,6 +11,12 @@
             "title": "Goto School",
             "completed": false,
             "highlight": true
+        },
+        {
+            "id": "4t34t3",
+            "title": "Bring Vegetables",
+            "completed": false,
+            "highlight": false
         }
     ]
-}
+}   
