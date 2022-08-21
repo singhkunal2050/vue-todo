@@ -1,22 +1,22 @@
 {
-    "todos": [
-        {
-            "id": "2323fa",
-            "title": "Goto Market",
-            "completed": false,
-            "highlight": true
-        },
-        {
-            "id": "6623fa",
-            "title": "Goto School",
-            "completed": false,
-            "highlight": true
-        },
-        {
-            "id": "4t34t3",
-            "title": "Bring Vegetables",
-            "completed": false,
-            "highlight": false
-        }
-    ]
-}   
+  "todos": [
+    {
+      "id": "2323fa",
+      "title": "Goto Market",
+      "completed": false,
+      "highlight": true
+    },
+    {
+      "id": "6623fa",
+      "title": "Goto School",
+      "completed": false,
+      "highlight": true
+    },
+    {
+      "id": "4t34t3",
+      "title": "Bring Vegetables",
+      "completed": false,
+      "highlight": false
+    }
+  ]
+}

@@ -12,9 +12,18 @@ export default {
         return { todos: [] , showFooter : false }
     },
     methods:{
-        deleteTodo(id){
-            this.todos = this.todos.filter((elem)=>elem.id!==id)
-            console.log({task:id})
+        async deleteTodo(id){
+            let response = await fetch(`http://localhost:5000/todos/${id}` , {
+                method:'DELETE',
+                headers : {
+                    'Content-type' : 'application/json',
+                }
+            });
+            if(response.status==200){
+                this.todos = this.todos.filter((elem)=>elem.id!==id)
+            }else{
+                console.log("Task Not Found!")
+            }
         },
         toggleHighlight(id){
             this.todos = this.todos.map((elem)=>{
@@ -31,8 +40,17 @@ export default {
                 return elem
             })
         },
-        addTodo(newTodo){
-            this.todos = [...this.todos , newTodo]
+        async addTodo(newTodo){
+            let response = await fetch('http://localhost:5000/todos' , {
+                method:'POST',
+                headers : {
+                    'Content-type' : 'application/json',
+                },
+                body : JSON.stringify(newTodo) 
+            });
+            let data = await response.json();
+        
+            this.todos = [...this.todos , data]
         },
         toggleContent(){
             this.showFooter=!this.showFooter;
