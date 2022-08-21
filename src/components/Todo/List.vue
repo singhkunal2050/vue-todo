@@ -1,5 +1,5 @@
 <template>
-    <div class="" :key="todo.key" v-for="todo in todos">
+    <div class="px-5 mt-2" :key="todo.key" v-for="todo in todos">
         <TodoItem :title="todo.title" :completed="todo.completed" :id="todo.id" :highlight="todo.highlight" @delete-todo="$emit('delete-todo',todo.id)" @toggle-highlight="$emit('toggle-highlight',todo.id)" @toggle-complete="$emit('toggle-complete',todo.id)" />
     </div>
 </template>
