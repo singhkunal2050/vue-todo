@@ -4,7 +4,7 @@
         <router-link class="text-emerald-500 font-bold" to="/about">About</router-link> <br>
         <button class="text-xs" @click="toggleContent"> {{ showFooter ? 'Hide' : 'Show more' }} </button>
         <footer v-if="showFooter" class="pt-2">
-            <p class="text-gray-700 text-xs"> Double Click Todo to highlight</p>
+            <router-link class="text-emerald-500 font-bold" to="/admin">Admin</router-link> <br>
         </footer>
     </div>
 </template>
