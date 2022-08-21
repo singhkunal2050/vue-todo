@@ -10,7 +10,7 @@
 
 ![About](./public/about.png)
 
-![Admin](./public/login.png)
+![Admin](./public/admin.png)
 
 Vue , Vitejs , TailwindCSS, JSON-server
 Hosted on Vercel and Backend on Glitch
