@@ -40,9 +40,15 @@ export default {
         async fetchTodos(){
             let response = await fetch('http://localhost:5000/todos');
             let data = await response.json();
+            return data;
+        },
+         async fetchTodo(id){
+            let response = await fetch(`http://localhost:5000/todos/${id}`);
+            let data = await response.json();
             console.log(data);
             return data;
         }
+
 
     },
     async created() {
