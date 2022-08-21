@@ -1,7 +1,7 @@
 <template>
     <div class="py-4 px-2 flex gap-4 flex-col items-center">
        <h2 class="text-xl font-bold">About Us</h2>
-
+        <Spinner v-if="!imageLoaded" />
         <img src="https://source.unsplash.com/500x500?cat" alt="Random Cat">
         <router-link to="/">Go Back Home 🏠</router-link>
 
@@ -9,5 +9,23 @@
 </template>
 
 <script>
-
+import Spinner from '../components/Spinner.vue';
+    export default{
+        data(){
+            return {
+                imageLoaded:false
+            }
+        },
+        mounted(){
+            document.onreadystatechange = () => {
+                if (document.readyState == "complete") {
+                    this.imageLoaded=true;
+                    console.log('Page completed with image and files!')
+                }
+            }
+        },
+        components:{
+            Spinner
+        }
+    }
 </script>
