@@ -12,6 +12,8 @@
 
 ![Admin](./public/admin.png)
 
+![Admin2](./public/admin2.png)
+
 Vue , Vitejs , TailwindCSS, JSON-server
 Hosted on Vercel and Backend on Glitch
 
