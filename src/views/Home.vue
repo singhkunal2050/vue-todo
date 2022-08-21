@@ -83,6 +83,7 @@
                 this.todos = [...this.todos, data]
             },
             async fetchTodos() {
+                console.log(import.meta.env.VITE_BACKEND_URL);
                 let response = await fetch('https://dummy-json-server.glitch.me/todos');
                 let data = await response.json();
                 this.loaded = true;

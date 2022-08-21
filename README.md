@@ -42,3 +42,12 @@ Hosted on Vercel and Backend on Glitch
 ## Todos
 
 - Work on unique ID for each user with json-server instead of common db 
+
+
+## Flow for Unique Users todo
+
+1. User lands 
+2. Post request to json-server with unique key `df2f32f32r`
+3. Created new User inside which a todo object will be managed 
+3. During refresh it will check if the user has a localstorage key of vue-todo-user-id
+4. If yes then all future request will be done with this user-id else a new Post request will be fired 
