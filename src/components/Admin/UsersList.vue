@@ -1,7 +1,7 @@
 <template>
     <section class="flex">
-        <div class="users-wrapper bg-red-300 h-[70vh] overflow-auto p-4 max-w-xs">
-            <div class="user p-2 bg-gray-200 m-1 cursor-pointer hover:bg-slate-300" :data-user-id="propertyName" @click="setCurrentUser" v-for="(value, propertyName, index) in  todoGroups">
+        <div class="users-wrapper bg-emerald-50 h-[70vh] overflow-auto py-4 md:w-[200px]">
+            <div class="user p-2 bg-gray-50 px-2 m-1 cursor-pointer hover:bg-slate-300" :data-user-id="propertyName" @click="setCurrentUser" v-for="(value, propertyName, index) in  todoGroups">
                     {{ propertyName }}
             </div>
         </div>
@@ -9,8 +9,11 @@
             <h3 class="text-2xl font-bold p-4">{{activeUser}}</h3>
            <div class="user-todos" v-for="(value, propertyName, index) in  todoGroups">
                 <div v-if="propertyName == activeUser" class="user p-2 bg-gray-200 m-1">
-                    <div class="user-todos-single m-2 bg-white" v-for="(valueinner, propertyNameinner, indexinner) in  value">
-                         {{  valueinner }}
+                    <div class="user-todos-single m-1 p-2 bg-white" v-for="(valueinner, propertyNameinner, indexinner) in  value">
+                         <h3>{{valueinner.title}}</h3>
+                         <p class="text-xs mt-1">{{valueinner.date}}</p>
+                         <p>{{valueinner.completed ? "Completed" : "Incomplete"}}</p>
+                         <p class="text-xs">{{valueinner.userid }}</p>
                     </div>
                 </div>
             </div>

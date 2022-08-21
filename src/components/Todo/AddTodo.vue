@@ -38,6 +38,7 @@ export default {
             const newTodo = {
                 id : Math.random().toString(36).slice(2),
                 title: this.text,
+                date:this.date,
                 completed:false,
                 highlight:this.highlight,
                 userid : this.userid
