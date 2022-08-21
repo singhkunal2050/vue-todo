@@ -2,7 +2,7 @@
 
 ## Setup Project
 
-```
+```js
     git clone 'project-git-link'
     npm install
     npm run backend
