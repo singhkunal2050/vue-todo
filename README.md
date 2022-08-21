@@ -6,7 +6,7 @@
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 
-![Snap](./public/snap.png)
+![Snap](./public/home.png)
 
 ![About](./public/about.png)
 
