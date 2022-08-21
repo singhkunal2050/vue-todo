@@ -7,9 +7,9 @@
 
     <section class="flex " >
         <div class="users-wrapper max-h-[60vh] overflow-auto py-4  ">
-            <h3 class="text-2xl font-bold px-2">Users</h3>
-            <div class="user p-2 shadow-md bg-gray-50 px-2 m-1 cursor-pointer hover:bg-slate-300 rounded-md" :data-user-id="propertyName" @click="setCurrentUser" v-for="(value, propertyName, index) in  todoGroups">
-                    {{ propertyName }}
+            <h3 class="text-2xl font-bold px-2">Users </h3>
+            <div class="user p-2 shadow-md bg-gray-50 px-2 m-1 cursor-pointer hover:bg-slate-100 rounded-md" :data-user-id="propertyName" @click="setCurrentUser" v-for="(value, propertyName, index) in  todoGroups">
+                    {{ propertyName }} 
             </div>
         </div>
         <div class="user-todos h-[60vh] overflow-auto flex-1">
@@ -43,7 +43,7 @@ export default {
     props: {
         todoGroups: Object
     },
-    emits:['log-out']
+        emits:['log-out']
 }
 
 </script>
