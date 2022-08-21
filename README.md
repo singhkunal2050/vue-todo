@@ -27,7 +27,7 @@ Hosted on Vercel and Backend on Glitch
 
     ```
 
-2. Change Backend API URL to Local `https://dummy-json-server.glitch.me/todos` to `http://localhost:5000/todos` in src/components/Todo.vue
+2. Change Backend API URL to Local `https://dummy-json-server.glitch.me/todos` to `http://localhost:5000/todos` in `/.env` file
 
 
 ## Info
