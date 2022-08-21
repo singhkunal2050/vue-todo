@@ -2,7 +2,7 @@
       <div class="loader grid place-items-center" >
             <div class="spinner-wrapper flex justify-center items-center  h-8 w-8">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    style="margin: auto; background: rgb(241, 242, 243); display: block;" width="200px" height="200px"
+                    style="margin: auto; background: rgb(241, 242, 243); display: block;" 
                     viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                     <circle cx="50" cy="50" fill="none" stroke="#000000" stroke-width="10" r="35"
                         stroke-dasharray="164.93361431346415 56.97787143782138">
