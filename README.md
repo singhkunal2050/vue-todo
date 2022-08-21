@@ -47,7 +47,6 @@ Hosted on Vercel and Backend on Glitch
 ## Flow for Unique Users todo
 
 1. User lands 
-2. Post request to json-server with unique key `df2f32f32r`
-3. Created new User inside which a todo object will be managed 
-3. During refresh it will check if the user has a localstorage key of vue-todo-user-id
-4. If yes then all future request will be done with this user-id else a new Post request will be fired 
+2. If new user then a new user id is created and set to localstorage eg:`user_f32f32r`
+3. During Creating Todo have a user_id field associated with each todo 
+3. Filter todos of the users todos with url parameters eg: `/todos/userid=user_f32f32r`
