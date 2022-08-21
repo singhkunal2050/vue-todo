@@ -23,4 +23,7 @@ Hosted on Vercel and Backend on Glitch
 - Backend Code
     https://glitch.com/edit/#!/dummy-json-server
 
+
+## Todos
+
 - Work on unique ID for each user with json-server instead of common db 
