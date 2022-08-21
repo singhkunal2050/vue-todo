@@ -8,6 +8,8 @@
 
 ![Snap](./public/snap.png)
 
+![About](./public/about.png)
+
 Vue , Vitejs , TailwindCSS, JSON-server
 Hosted on Vercel and Backend on Glitch
 
