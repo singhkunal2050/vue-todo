@@ -9,8 +9,8 @@
                 <span> Highlight </span>
                 <input v-model="highlight" type="checkbox" name="todo-highlight" id="todo-highlight">
             </label>
-            <button style="background:#005600"
-                class="p-2 bg-gray-700 text-white focus-visible:outline-gray-800 ">
+            <button
+                class="p-2 bg-emerald-700 text-white focus-visible:outline-gray-800 ">
                 Add Todo
             </button>
         </form>
