@@ -17,7 +17,7 @@
             ListHeader, List, Spinner
         },
         data() {
-            return { todos: [], loaded: false }
+            return { todos: [], loaded: false , userid:0 }
         },
         methods: {
             async deleteTodo(id) {
@@ -84,7 +84,7 @@
                 this.todos = [...this.todos, data]
             },
             async fetchTodos() {
-                let response = await fetch(`${BACKEND_URL}/todos`);
+                let response = await fetch(`${BACKEND_URL}/todos?userid=${this.userid}`);
                 let data = await response.json();
                 this.loaded = true;
                 return data;
@@ -97,6 +97,12 @@
             }
         },
         async created() {
+            if(localStorage.userid){
+                this.userid=localStorage.userid;
+            }else{
+                 localStorage.userid = this.userid = 'user_' + Math.random().toString(32).slice(2);
+                console.log('New User 🤵')
+            }
             this.todos = await this.fetchTodos();
         }
     }

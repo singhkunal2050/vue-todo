@@ -25,6 +25,7 @@ export default {
             date: '',
             completed: false,
             highlight: false,
+            userid: localStorage.userid
         }
     },
     methods:{
@@ -39,6 +40,7 @@ export default {
                 title: this.text,
                 completed:false,
                 highlight:this.highlight,
+                userid : this.userid
             }
             console.log(newTodo);
             this.$emit('add-todo',newTodo)
