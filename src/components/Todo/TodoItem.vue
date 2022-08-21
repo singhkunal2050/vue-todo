@@ -1,11 +1,14 @@
 <template lang="">
-        <article @dblclick="$emit('toggle-highlight',id)" :class="[ highlight ?  'border-l-orange-500' : 'border-l-transparent' , completed ?  'bg-[#f0fffb]' : 'bg-[#fffbfb]' , , 'flex' ,'justify-between' ,'p-2' , 'py-4', 'px-2', 'bg-white', 'mx-1' , 'my-2', 'shadow-lg' , 'border-l-4' , 'rounded-md']" :data-todo-id="id">
-            <div class="todo-content">
+        <article @dblclick="$emit('toggle-highlight',id)" :class="[ highlight ?  'border-l-orange-500' : 'border-l-transparent' , completed ?  'bg-[#f0fffb]' : 'bg-[#fffbfb]' , , 'flex' ,'justify-between' ,'p-2' , 'py-4', 'px-2', 'bg-white', 'mx-1' , 'my-2', 'shadow-lg' , 'border-l-4' , 'rounded-md', 'gap-4']" :data-todo-id="id">
+            <div class="todo-content flex-1">
                 <p> {{title}}</p>
-                <span class="cursor-pointer text-xs p-2" @click="$emit('toggle-complete',id)"> {{completed ? "Completed" : "Incomplete"}}</span>
+                <span class="cursor-pointer text-xs p-2" > {{completed ? "Completed" : "Incomplete"}}</span>
             </div>
+            <button class="justify-self-end" @click="$emit('toggle-complete',id)">
+                {{completed ? "❌" : "✔️"}}
+            </button>
             <button @click="$emit('delete-todo',id)"  class="close-icon w-4 cursor-pointer text-red-800">
-                ⓧ
+                🗑️
             </button>
         </article>
 </template>
