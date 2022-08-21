@@ -25,18 +25,41 @@ export default {
                 console.log("Task Not Found!")
             }
         },
-        toggleHighlight(id){
+        async toggleHighlight(id){
+            let todoToUpdate = await this.fetchTodo(id); 
+            const updatedTodo = {...todoToUpdate , highlight:!todoToUpdate.highlight};
+
+            let response = await fetch(`http://localhost:5000/todos/${id}` , {
+                method:'PUT',
+                headers : {
+                    'Content-type' : 'application/json',
+                },
+                body:JSON.stringify(updatedTodo)
+            });
+            let data = await response.json(); 
+
             this.todos = this.todos.map((elem)=>{
                 if(elem.id==id)
-                    elem.highlight=!elem.highlight
+                     elem.highlight=data.highlight
                 return elem
             })
         },
-        toggleComplete(id){
-            console.log(id)
+        async toggleComplete(id){
+            let todoToUpdate = await this.fetchTodo(id); 
+            const updatedTodo = {...todoToUpdate , completed:!todoToUpdate.completed};
+
+            let response = await fetch(`http://localhost:5000/todos/${id}` , {
+                method:'PUT',
+                headers : {
+                    'Content-type' : 'application/json',
+                },
+                body:JSON.stringify(updatedTodo)
+            });
+            let data = await response.json(); 
+
             this.todos = this.todos.map((elem)=>{
                 if(elem.id==id)
-                    elem.completed=!elem.completed
+                     elem.completed=data.completed
                 return elem
             })
         },
