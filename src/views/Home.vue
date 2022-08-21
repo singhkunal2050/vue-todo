@@ -10,6 +10,7 @@
     import ListHeader from '../components/Todo/ListHeader.vue';
     import Spinner from '../components/Spinner.vue';
     import List from '../components/Todo/List.vue';
+    let BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
     export default {
         components: {
@@ -20,7 +21,7 @@
         },
         methods: {
             async deleteTodo(id) {
-                let response = await fetch(`https://dummy-json-server.glitch.me/todos/${id}`, {
+                let response = await fetch(`${BACKEND_URL}/todos/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-type': 'application/json',
@@ -36,7 +37,7 @@
                 let todoToUpdate = await this.fetchTodo(id);
                 const updatedTodo = { ...todoToUpdate, highlight: !todoToUpdate.highlight };
 
-                let response = await fetch(`https://dummy-json-server.glitch.me/todos/${id}`, {
+                let response = await fetch(`${BACKEND_URL}/todos/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-type': 'application/json',
@@ -55,7 +56,7 @@
                 let todoToUpdate = await this.fetchTodo(id);
                 const updatedTodo = { ...todoToUpdate, completed: !todoToUpdate.completed };
 
-                let response = await fetch(`https://dummy-json-server.glitch.me/todos/${id}`, {
+                let response = await fetch(`${BACKEND_URL}/todos/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-type': 'application/json',
@@ -71,7 +72,7 @@
                 })
             },
             async addTodo(newTodo) {
-                let response = await fetch('https://dummy-json-server.glitch.me/todos', {
+                let response = await fetch(`${BACKEND_URL}/todos`, {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json',
@@ -83,14 +84,13 @@
                 this.todos = [...this.todos, data]
             },
             async fetchTodos() {
-                console.log(import.meta.env.VITE_BACKEND_URL);
-                let response = await fetch('https://dummy-json-server.glitch.me/todos');
+                let response = await fetch(`${BACKEND_URL}/todos`);
                 let data = await response.json();
                 this.loaded = true;
                 return data;
             },
             async fetchTodo(id) {
-                let response = await fetch(`https://dummy-json-server.glitch.me/todos/${id}`);
+                let response = await fetch(`${BACKEND_URL}/todos/${id}`);
                 let data = await response.json();
                 console.log(data);
                 return data;
