@@ -18,6 +18,7 @@
                         class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow"
                         placeholder="Enter your password">
                 </label>
+                <p class="text-center text-xs">Password is admin</p>
                 <button
                     class="w-full py-3 font-medium text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg border-emerald-500 hover:shadow inline-flex space-x-2 items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
