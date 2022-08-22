@@ -1,7 +1,7 @@
 <template>
     <!-- component -->
 
-    <div class="w-[60%] mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
+    <div class="w-full md:w-[60%] mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
         <h1 class="text-4xl font-medium">Login</h1>
         <p class="text-slate-500">Hi, Welcome back 👋</p>
         <form @submit="handleSubmit" class="my-10">
