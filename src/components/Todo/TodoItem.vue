@@ -23,6 +23,3 @@ export default {
     emits: ['delete-todo', 'toggle-highlight', 'toggle-complete']
 }
 </script>
-<style lang="">
-    
-</style>
